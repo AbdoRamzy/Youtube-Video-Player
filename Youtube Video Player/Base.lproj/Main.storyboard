@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iKB-CO-VYR">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,325 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Youtube_Video_Player" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Youtube Video Player " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbv-8a-hGk">
+                                <rect key="frame" x="50" y="343" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Nlz-G6-bF8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="youtube" translatesAutoresizingMaskIntoConstraints="NO" id="aXC-Rx-0ne">
+                                <rect key="frame" x="57" y="183" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="E5c-kz-Kuw"/>
+                                    <constraint firstAttribute="width" constant="300" id="H5f-RZ-pdk"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Fbv-8a-hGk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4dU-PE-I8V"/>
+                            <constraint firstItem="Fbv-8a-hGk" firstAttribute="top" secondItem="aXC-Rx-0ne" secondAttribute="bottom" constant="10" id="DwQ-fG-em5"/>
+                            <constraint firstItem="aXC-Rx-0ne" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V8s-79-pQo"/>
+                            <constraint firstItem="Fbv-8a-hGk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="VUH-6j-uVZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fbv-8a-hGk" secondAttribute="trailing" constant="50" id="jDE-lh-mhJ"/>
+                            <constraint firstItem="Fbv-8a-hGk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="uV7-3l-wbI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="muY-Me-cJa"/>
+                    <connections>
+                        <segue destination="6Uo-dY-DrL" kind="presentation" identifier="Start" modalPresentationStyle="fullScreen" id="Cl1-b3-V5b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="944.92753623188412" y="138.58695652173915"/>
+        </scene>
+        <!--ChannelsVC-->
+        <scene sceneID="Zpb-EP-6Pq">
+            <objects>
+                <viewController storyboardIdentifier="ChannelsVC" id="6Uo-dY-DrL" customClass="ChannelsVC" customModule="Youtube_Video_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5an-Xe-kgo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fU0-Da-u2b">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Channels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X8E-UM-vif">
+                                        <rect key="frame" x="10" y="5" width="394" height="50"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="X8E-UM-vif" secondAttribute="bottom" constant="5" id="HVH-5K-ckL"/>
+                                    <constraint firstItem="X8E-UM-vif" firstAttribute="leading" secondItem="fU0-Da-u2b" secondAttribute="leading" constant="10" id="JSO-8h-mvj"/>
+                                    <constraint firstAttribute="height" constant="60" id="aCA-Ek-IIF"/>
+                                    <constraint firstItem="X8E-UM-vif" firstAttribute="top" secondItem="fU0-Da-u2b" secondAttribute="top" constant="5" id="bt8-fC-bhO"/>
+                                    <constraint firstAttribute="trailing" secondItem="X8E-UM-vif" secondAttribute="trailing" constant="10" id="naI-9e-iuS"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-fg-edb">
+                                <rect key="frame" x="0.0" y="76" width="414" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="fU0-Da-u2b" firstAttribute="top" secondItem="Caa-1g-ymV" secondAttribute="top" id="Ess-Mj-qPs"/>
+                            <constraint firstItem="gzf-fg-edb" firstAttribute="leading" secondItem="Caa-1g-ymV" secondAttribute="leading" id="GMe-ZT-UHg"/>
+                            <constraint firstItem="gzf-fg-edb" firstAttribute="top" secondItem="fU0-Da-u2b" secondAttribute="bottom" constant="16" id="c1G-uA-zYR"/>
+                            <constraint firstItem="Caa-1g-ymV" firstAttribute="trailing" secondItem="fU0-Da-u2b" secondAttribute="trailing" id="pb6-ik-LUt"/>
+                            <constraint firstItem="fU0-Da-u2b" firstAttribute="leading" secondItem="Caa-1g-ymV" secondAttribute="leading" id="v0e-rl-SIL"/>
+                            <constraint firstItem="Caa-1g-ymV" firstAttribute="bottom" secondItem="gzf-fg-edb" secondAttribute="bottom" id="vuE-9d-63r"/>
+                            <constraint firstItem="Caa-1g-ymV" firstAttribute="trailing" secondItem="gzf-fg-edb" secondAttribute="trailing" id="yEC-Ua-5mY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Caa-1g-ymV"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g7k-k0-Af6"/>
+                    <connections>
+                        <outlet property="TableViewChannels" destination="gzf-fg-edb" id="3N8-oA-4za"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xcO-6m-HLM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1672" y="139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6f5-4x-NoR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="iKB-CO-VYR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oA3-hR-PmM">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sbL-GF-keQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rn7-8j-Ihq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="139"/>
+        </scene>
+        <!--PlaylistVC-->
+        <scene sceneID="FKe-OX-jvp">
+            <objects>
+                <viewController storyboardIdentifier="PlaylistVC" id="9om-A6-91b" customClass="PlaylistVC" customModule="Youtube_Video_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y38-8u-71l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdk-Ie-91i">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Channel Playlists" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VPX-bI-8tp">
+                                        <rect key="frame" x="10" y="5" width="394" height="50"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEL-Bp-7rd">
+                                        <rect key="frame" x="10" y="10" width="30" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="nat-5H-ZZH"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="goBackAction:" destination="9om-A6-91b" eventType="touchUpInside" id="r33-oU-yXD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="VPX-bI-8tp" firstAttribute="top" secondItem="gdk-Ie-91i" secondAttribute="top" constant="5" id="AC9-9z-KjF"/>
+                                    <constraint firstItem="GEL-Bp-7rd" firstAttribute="leading" secondItem="gdk-Ie-91i" secondAttribute="leading" constant="10" id="aaj-Tz-Wjx"/>
+                                    <constraint firstAttribute="bottom" secondItem="VPX-bI-8tp" secondAttribute="bottom" constant="5" id="jJb-Rv-Ss8"/>
+                                    <constraint firstItem="VPX-bI-8tp" firstAttribute="leading" secondItem="gdk-Ie-91i" secondAttribute="leading" constant="10" id="kLb-Ns-eq0"/>
+                                    <constraint firstItem="GEL-Bp-7rd" firstAttribute="top" secondItem="gdk-Ie-91i" secondAttribute="top" constant="10" id="osX-v8-P4o"/>
+                                    <constraint firstAttribute="bottom" secondItem="GEL-Bp-7rd" secondAttribute="bottom" constant="10" id="tjY-Vv-QIR"/>
+                                    <constraint firstAttribute="trailing" secondItem="VPX-bI-8tp" secondAttribute="trailing" constant="10" id="vLr-R1-JaW"/>
+                                    <constraint firstAttribute="height" constant="60" id="wK6-pQ-exf"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fIG-uv-NvU">
+                                <rect key="frame" x="0.0" y="76" width="414" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BUg-Ze-vWA" firstAttribute="trailing" secondItem="gdk-Ie-91i" secondAttribute="trailing" id="Sy6-1c-AYl"/>
+                            <constraint firstItem="BUg-Ze-vWA" firstAttribute="bottom" secondItem="fIG-uv-NvU" secondAttribute="bottom" id="Ubb-XL-WlI"/>
+                            <constraint firstItem="BUg-Ze-vWA" firstAttribute="trailing" secondItem="fIG-uv-NvU" secondAttribute="trailing" id="Zzd-LG-ECn"/>
+                            <constraint firstItem="gdk-Ie-91i" firstAttribute="top" secondItem="BUg-Ze-vWA" secondAttribute="top" id="tr9-vv-LBk"/>
+                            <constraint firstItem="fIG-uv-NvU" firstAttribute="leading" secondItem="BUg-Ze-vWA" secondAttribute="leading" id="xh7-Lo-CWy"/>
+                            <constraint firstItem="fIG-uv-NvU" firstAttribute="top" secondItem="gdk-Ie-91i" secondAttribute="bottom" constant="16" id="z92-ao-zto"/>
+                            <constraint firstItem="gdk-Ie-91i" firstAttribute="leading" secondItem="BUg-Ze-vWA" secondAttribute="leading" id="ziS-JX-Lie"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BUg-Ze-vWA"/>
+                    </view>
+                    <connections>
+                        <outlet property="TableViewPlaylists" destination="fIG-uv-NvU" id="DMA-36-iMU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkB-X8-F2Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2302.898550724638" y="138.58695652173915"/>
+        </scene>
+        <!--Video ListVC-->
+        <scene sceneID="mWZ-NB-n2q">
+            <objects>
+                <viewController storyboardIdentifier="VideoListVC" id="p9J-yO-kPb" customClass="VideoListVC" customModule="Youtube_Video_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dnb-kP-Bhr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGX-UK-MTS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Videos List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jw2-8K-4PZ">
+                                        <rect key="frame" x="10" y="5" width="394" height="50"/>
+                                        <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pi5-lr-goz">
+                                        <rect key="frame" x="10" y="10" width="30" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Vum-Ee-qww"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="goBackAction:" destination="p9J-yO-kPb" eventType="touchUpInside" id="ytB-fs-KAV"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1uJ-54-ez0"/>
+                                    <constraint firstItem="Jw2-8K-4PZ" firstAttribute="top" secondItem="IGX-UK-MTS" secondAttribute="top" constant="5" id="MQk-rQ-4Fl"/>
+                                    <constraint firstItem="Jw2-8K-4PZ" firstAttribute="leading" secondItem="IGX-UK-MTS" secondAttribute="leading" constant="10" id="OgJ-sb-3AI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Jw2-8K-4PZ" secondAttribute="trailing" constant="10" id="SeW-5G-p4X"/>
+                                    <constraint firstItem="pi5-lr-goz" firstAttribute="top" secondItem="IGX-UK-MTS" secondAttribute="top" constant="10" id="TTm-er-CDa"/>
+                                    <constraint firstItem="pi5-lr-goz" firstAttribute="leading" secondItem="IGX-UK-MTS" secondAttribute="leading" constant="10" id="Y81-Ur-AE3"/>
+                                    <constraint firstAttribute="bottom" secondItem="pi5-lr-goz" secondAttribute="bottom" constant="10" id="eLh-95-e5i"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jw2-8K-4PZ" secondAttribute="bottom" constant="5" id="fDR-sN-rvj"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="UnK-ua-grD">
+                                <rect key="frame" x="0.0" y="76" width="414" height="660"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zax-5S-zN7" firstAttribute="trailing" secondItem="IGX-UK-MTS" secondAttribute="trailing" id="1Xm-gZ-re1"/>
+                            <constraint firstItem="UnK-ua-grD" firstAttribute="leading" secondItem="zax-5S-zN7" secondAttribute="leading" id="4t8-zY-Zhh"/>
+                            <constraint firstItem="zax-5S-zN7" firstAttribute="trailing" secondItem="UnK-ua-grD" secondAttribute="trailing" id="Or4-yf-zQ9"/>
+                            <constraint firstItem="UnK-ua-grD" firstAttribute="top" secondItem="IGX-UK-MTS" secondAttribute="bottom" constant="16" id="POg-Gi-vML"/>
+                            <constraint firstItem="IGX-UK-MTS" firstAttribute="top" secondItem="zax-5S-zN7" secondAttribute="top" id="fXX-EJ-Gcd"/>
+                            <constraint firstItem="IGX-UK-MTS" firstAttribute="leading" secondItem="zax-5S-zN7" secondAttribute="leading" id="oBQ-jM-Sg9"/>
+                            <constraint firstItem="zax-5S-zN7" firstAttribute="bottom" secondItem="UnK-ua-grD" secondAttribute="bottom" id="qtc-od-hQW"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zax-5S-zN7"/>
+                    </view>
+                    <connections>
+                        <outlet property="TableVideolist" destination="UnK-ua-grD" id="RMy-XS-vbJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AVb-k3-gUK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2942" y="139"/>
+        </scene>
+        <!--Video PlayerVC-->
+        <scene sceneID="FMK-HN-cp9">
+            <objects>
+                <viewController storyboardIdentifier="VideoPlayerVC" id="8nh-pB-jpP" customClass="VideoPlayerVC" customModule="Youtube_Video_Player" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wi5-Gw-sxW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ip3-mJ-2Nz">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cm-lU-ZXR">
+                                        <rect key="frame" x="20" y="218" width="374" height="300"/>
+                                        <subviews>
+                                            <view clipsSubviews="YES" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Mha-XZ-C63" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                                <rect key="frame" x="2" y="2" width="370" height="296"/>
+                                                <color key="backgroundColor" red="0.65490196079999996" green="0.65098039220000004" blue="0.65098039220000004" alpha="0.25097104520000002" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Mha-XZ-C63" firstAttribute="top" secondItem="4cm-lU-ZXR" secondAttribute="top" constant="2" id="0vv-dr-fBf"/>
+                                            <constraint firstAttribute="height" constant="300" id="A8T-M2-AKZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Mha-XZ-C63" secondAttribute="trailing" constant="2" id="KZ2-X0-QE7"/>
+                                            <constraint firstItem="Mha-XZ-C63" firstAttribute="leading" secondItem="4cm-lU-ZXR" secondAttribute="leading" constant="2" id="amM-w5-yO9"/>
+                                            <constraint firstAttribute="bottom" secondItem="Mha-XZ-C63" secondAttribute="bottom" constant="2" id="d4C-6d-mKg"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="4cm-lU-ZXR" secondAttribute="trailing" constant="20" id="73t-U9-AMi"/>
+                                    <constraint firstItem="4cm-lU-ZXR" firstAttribute="centerX" secondItem="Ip3-mJ-2Nz" secondAttribute="centerX" id="SZn-bN-u4J"/>
+                                    <constraint firstItem="4cm-lU-ZXR" firstAttribute="leading" secondItem="Ip3-mJ-2Nz" secondAttribute="leading" constant="20" id="Xsm-jy-bO6"/>
+                                    <constraint firstItem="4cm-lU-ZXR" firstAttribute="centerY" secondItem="Ip3-mJ-2Nz" secondAttribute="centerY" id="awK-0i-rCY"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JsF-mb-dJR" appends="YES" id="KYR-MQ-G3v"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ip3-mJ-2Nz" firstAttribute="leading" secondItem="Wi5-Gw-sxW" secondAttribute="leading" id="LOd-5a-AFI"/>
+                            <constraint firstAttribute="bottom" secondItem="Ip3-mJ-2Nz" secondAttribute="bottom" id="Sga-iQ-AHO"/>
+                            <constraint firstAttribute="trailing" secondItem="Ip3-mJ-2Nz" secondAttribute="trailing" id="h09-Qi-xjd"/>
+                            <constraint firstItem="Ip3-mJ-2Nz" firstAttribute="top" secondItem="Wi5-Gw-sxW" secondAttribute="top" id="rSn-9c-g2f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kCO-c4-MFt"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoPlayer" destination="Mha-XZ-C63" id="i66-2d-hKs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BW8-HG-IhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="JsF-mb-dJR">
+                    <connections>
+                        <action selector="backViewRecognizerAction:" destination="8nh-pB-jpP" id="mCu-Zc-y3s"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3593" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="64" height="64"/>
+        <image name="youtube" width="256" height="256"/>
+    </resources>
 </document>
